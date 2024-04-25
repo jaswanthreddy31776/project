@@ -1,0 +1,43 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SMS PROJECT</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/adminstyle.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/facultystyle.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body bgcolor="lightgrey">
+    <h1 align="center">Student Academic Management System</h1>
+    <br>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <div class="menu">
+          <p style="bgcolor: lightgrey">
+            <a href="{% url 'facultyhome' %}">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{% url 'facultychangepwd' %}">Change Password</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{% url 'facultycourses' %}">My Courses</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{% url 'facultylogin' %}">Logout</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </p>
+        </div>
+      </ul>
+    </nav>
+    <h5 align="right" style="color:green">Welcome {{fid}}</h5>
+    <br />
+    {% block 'body' %}
+    <center>
+    <div class="card">
+        <div class="container">
+          <br>
+          <h4><b>{{faculty.facultyid}}-{{faculty.fullname}}</b></h4>
+          <p>{{faculty.department}}</p>
+          <p>{{faculty.qualification}}</p>
+          <p>{{faculty.email}}</p>
+          <p>{{faculty.contact}}</p>
+        </div>
+    </div>
+    </center>
+    {% endblock %}
+  </body>
+</html>

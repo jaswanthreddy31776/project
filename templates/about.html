@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% load static %}
+<style>
+     body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: white;
+    }
+    h2 {
+        text-align: left;
+        border-bottom: 2px solid #333;
+        padding-bottom: 5px;
+    }
+    .sidebar {
+        float: left;
+        width: 30%;
+        padding-right: 20px;
+    }
+    .content {
+        float: left;
+        width: 70%;
+    }
+</style>
+<body>
+    {% block 'body' %}
+    <div class="container">
+    <h1><u>About Project </u></h1><br>
+    <h2> Student Course Management System</h2>
+    <div class="sidebar">
+        <h3 align="left" style="margin-left:10px">Modules</h3>
+        <ul align="left" style="margin-left:10px">
+            <li>1.Admin</li>
+            <li>2.Faculty</li>
+            <li>3.Student</li>
+        </ul>
+    </div>
+    <div class="content">
+            <h3 id="admin" align="left" style="margin-left: 10px">Admin Module:</h3>
+            <p style="margin-left: 10%; text-indent: -5%">The Admin module of the Student Course Management System allows administrators to manage various aspects of the system, including user accounts, courses, enrollments, and system settings. Administrators have the highest level of access and can perform tasks such as adding new users, assigning roles, and generating reports.</p>
+            <br>
+            <h3 id="faculty" align="left" style="margin-left: 10px">Faculty Module:</h3>
+            <p style="margin-left: 10%; text-indent: -5%">The Faculty module enables instructors to manage their courses, upload course materials, communicate with students, and evaluate student performance. Faculty members can view their course rosters, post announcements, grade assignments, and provide feedback to students.</p>
+            <br>
+            <h3 id="student" align="left" style="margin-left: 10px">Student Module:</h3>
+            <p style="margin-left: 10%; text-indent: -5%">The Student module provides students with access to course information, assignments, grades, and communication tools. Students can view their course schedules, submit assignments, participate in discussions, and track their academic progress. Additionally, students can access resources such as lecture notes, readings, and multimedia content.</p>
+            <br>
+            <h3 align="left" style="margin-left: 10px">About Project</h3>
+            <p style="margin-left: 10%; text-indent: -5%">The Student Course Management System is designed to streamline the process of managing courses, facilitating communication between students and instructors, and enhancing the overall learning experience. By providing a centralized platform for course administration, the system aims to improve efficiency, transparency, and collaboration within educational institutions.</p>
+    </div>
+</div>
+    {% endblock %}
+</body>

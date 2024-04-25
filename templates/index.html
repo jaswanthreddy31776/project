@@ -1,0 +1,58 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMS PROJECT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <style>
+        .container {
+            position: relative;
+            text-align: center;
+        }
+
+        .background-image {
+            width: 100%;
+            height: 85%;
+            opacity: 0.4;
+        }
+
+        .text {
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            color: teal;
+            font-size: 75px;
+            font-weight: bold;
+        }
+    </style>
+<body bgcolor="lightgrey">
+<nav class="navbar">
+    <ul class="nav-links">
+        <div class="menu">
+            <li><a href="{% url 'home' %}"><u>Home</u></a></li>
+            <li><a href="{% url 'about' %}"><u>About Project</u></a></li>
+            <li class="services">
+                <a href="#"><u>Login ▼</u></a>
+                <ul class="dropdown">
+                    <li><a href="{% url 'studentlogin' %}">Student</a></li>
+                    <li><a href="{% url 'facultylogin' %}">Faculty</a></li>
+                    <li><a href="{% url 'login' %}">Admin</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'contact' %}"><u>Contact Us</u></a>&nbsp;&nbsp;&nbsp;</li>
+        </div>
+    </ul>
+</nav><br>
+{% block 'body' %}
+    <div class="container">
+        <img class="background-image" src="https://img.freepik.com/premium-psd/group-students-studying-together_53876-28079.jpg?w=1380" alt="Home Page">
+    </div>
+    <div class="text">
+        Student Course Management System..!
+    </div>
+{% endblock %}
+</body>
+</html>
+
